@@ -28,4 +28,10 @@ jobs:
         maven-version: 3.6.0
     - name: Build
       run: mvn -B clean install
+           mkdir staging && cp ./webapp/target/*.jar staging
+    - name: Persist jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifacts
+        path: staging
       
