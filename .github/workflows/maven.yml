@@ -29,7 +29,7 @@ jobs:
     - name: Build
       run: |
         mvn -B clean install
-        mkdir staging && cp ./webapp/target/*.jar staging
+        mkdir staging && cp ./reference-ccda-validator/target/*.war staging
     - name: Persist jar
       uses: actions/upload-artifact@v2
       with:
